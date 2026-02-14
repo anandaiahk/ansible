@@ -1,0 +1,10 @@
+- name: demo on conditions
+  hosts: local
+  connection: local
+  vars:
+   NUMBER: 7
+  tasks:
+  - name: ansible more then 5 lessions
+    ansible.builtin.debug:
+      msg: "yes it is more"
+    when: NUMBER > 5   
