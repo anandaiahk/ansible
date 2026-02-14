@@ -10,7 +10,7 @@
     prompt: eneter name
     private: false
   tasks:
-   - name: tasks level variables
+  - name: tasks level variables
      vars:
        NAME: "ansible from tasks"
        ansible.builtin.debug:
