@@ -3,10 +3,25 @@
   connection: local
   vars:
     topics: shell, linux, terraform, command
-    tagsList:
+    tagsMap:
       name: ansible
       project: roboshop
       cmponent: catalogue
+    tagsList: [
+        {
+            "key": "name",
+            "value": "ansible"
+        },
+        {
+            "key": "project",
+            "value": "roboshop"
+        },
+        {
+            "key": "cmponent",
+            "value": "catalogue"
+        }
+    ]
+  
   tasks:
   - name: greeting
     ansible.builtin.debug:
@@ -17,4 +32,7 @@
       msg: "{{ topics | split(',') }}"
   - name: converting map to list
     ansible.builtin.debug:
-      msg: "{{ tagsList | dict2items }}"        
+      msg: "{{ tagsMap | dict2items }}"        
+  - name: converting list to map
+    ansible.builtin.debug:
+      msg: "{{ tagsList | items2dict }}"
