@@ -13,5 +13,5 @@
   - name: tasks level variables
     vars:
       NAME: "ansible from tasks"
-      ansible.builtin.debug:
-        msg: "hi {{ NAME }}"
+    ansible.builtin.debug:
+      msg: "hi {{ NAME }}"
